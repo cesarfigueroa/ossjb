@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 2
+
+development:
+  <<: *default
+  database: ossjb_development
+
+test:
+  <<: *default
+  database: ossjb_test
+
+production:
+  <<: *default
+  database: ossjb_production
+  username: ossjb
+  password: <%= ENV['OSSJB_DATABASE_PASSWORD'] %>
