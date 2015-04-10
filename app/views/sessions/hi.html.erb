@@ -1,5 +1,11 @@
 <% if authenticated? %>
   <p>Logged in as @<%= client.user.login %>. <%= link_to 'Log out?', logout_path %></p>
+
+  <ul>
+    <% client.repositories.each do |repository| %>
+      <li><%= link_to repository.name, repository.html_url %></li>
+    <% end %>
+  </ul>
 <% else %>
   <p>You need to <%= link_to 'login', sessions_new_path %>, bro.</p>
 <% end %>
