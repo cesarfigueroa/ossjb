@@ -38,13 +38,10 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.0)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
     columnize (0.9.0)
-    debug_inspector (0.0.2)
     erubis (2.7.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
@@ -116,11 +113,6 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    web-console (2.1.2)
-      activemodel (>= 4.0)
-      binding_of_caller (>= 0.7.2)
-      railties (>= 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
 
 PLATFORMS
   ruby
@@ -132,4 +124,3 @@ DEPENDENCIES
   pg
   puma
   rails (= 4.2.1)
-  web-console (~> 2.0)
