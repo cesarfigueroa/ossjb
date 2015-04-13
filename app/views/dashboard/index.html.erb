@@ -1,4 +1,8 @@
-<p>Logged in as @<%= client.user.login %>. <%= link_to 'Log out?', logout_path %></p>
+<p>Logged in as @<%= client.user.login %>.</p>
+
+<%= form_tag logout_path, :method => :delete do %>
+  <%= button_tag 'Log out?' %>
+<% end %>
 
 <% if client.repositories.any? %>
   <ul>

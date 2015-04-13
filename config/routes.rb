@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   constraints Constraints::LoggedIn do
-    get :logout, :to => 'sessions#destroy', :as => :logout
     root :to => 'dashboard#index', :as => :logged_in_root
+    delete :logout, :to => 'sessions#destroy', :as => :logout
   end
 
   root :to => 'home#index'
