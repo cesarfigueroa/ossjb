@@ -4,6 +4,7 @@ Octokit.configure do |config|
 end
 
 Octokit.middleware = Faraday::RackBuilder.new do |builder|
+  builder.use Octokit::Response::RaiseError
   builder.use Faraday::HttpCache,
     :shared_cache => false,
     :serializer => Marshal,
