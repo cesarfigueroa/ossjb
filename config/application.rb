@@ -18,7 +18,7 @@ module OSSJB
 
     config.generators do |g|
       g.assets false
-      g.helpers false
+      g.helper false
       g.test_framework :rspec, :fixture => false
       g.view_specs false
       g.helper_specs false
