@@ -42,6 +42,7 @@ GEM
     byebug (4.0.5)
       columnize (= 0.9.0)
     columnize (0.9.0)
+    dalli (2.7.4)
     erubis (2.7.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
@@ -119,6 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  dalli
   faraday-http-cache
   octokit (~> 3.0)
   pg

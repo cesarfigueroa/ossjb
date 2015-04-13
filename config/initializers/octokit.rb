@@ -4,6 +4,10 @@ Octokit.configure do |config|
 end
 
 Octokit.middleware = Faraday::RackBuilder.new do |builder|
-  builder.use Faraday::HttpCache, :shared_cache => false, :serializer => Marshal
+  builder.use Faraday::HttpCache,
+    :shared_cache => false,
+    :serializer => Marshal,
+    :store => Rails.cache
+
   builder.adapter Faraday.default_adapter
 end

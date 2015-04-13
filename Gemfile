@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 
 # gem 'bcrypt', '~> 3.1.7'
+gem 'dalli'
 gem 'faraday-http-cache' # https://github.com/octokit/octokit.rb#caching
 gem 'octokit', '~> 3.0'
 gem 'pg'
