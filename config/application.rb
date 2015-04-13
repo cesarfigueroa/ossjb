@@ -13,6 +13,7 @@ Bundler.require(*Rails.groups)
 module OSSJB
   class Application < Rails::Application
     config.active_record.raise_in_transactional_callbacks = true
+    config.autoload_paths << Rails.root.join('lib')
     config.cache_store = :mem_cache_store, Rails.application.secrets.memcache_url
 
     config.generators do |g|
