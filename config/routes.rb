@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  root :to => 'sessions#hi'
+  constraints Constraints::LoggedIn do
+    get :logout, :to => 'sessions#destroy', :as => :logout
+    root :to => 'dashboard#index', :as => :logged_in_root
+  end
 
-  # Refactor to use #resources
-  get 'sessions/new', :to => 'sessions#new'
-  get 'callback', :to => 'sessions#callback'
-  get :logout, :to => 'sessions#destroy'
+  root :to => 'home#index'
+
+  get :login, :to => 'sessions#new', :as => :login
+  get :callback, :to => 'sessions#create'
 end

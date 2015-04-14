@@ -1,13 +1,13 @@
-<% if authenticated? %>
-  <p>Logged in as @<%= client.user.login %>. <%= link_to 'Log out?', logout_path %></p>
+<p>Logged in as @<%= client.user.login %>. <%= link_to 'Log out?', logout_path %></p>
 
+<% if client.repositories.any? %>
   <ul>
     <% client.repositories.each do |repository| %>
       <li><%= link_to repository.name, repository.html_url %></li>
     <% end %>
   </ul>
 <% else %>
-  <p>You need to <%= link_to 'login', sessions_new_path %>, bro.</p>
+  <p>You no haz repos :-(</p>
 <% end %>
 
 <pre><%= client.rate_limit %></pre>
