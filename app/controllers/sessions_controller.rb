@@ -1,22 +1,11 @@
 class SessionsController < ApplicationController
-  def hi
-  end
-
   def new
-    redirect_to Octokit.authorize_url
+    redirect_to Octokit.authorize_url, :status => 307
   end
 
-  def callback
-    @access_token = Octokit.exchange_code_for_token(params[:code]).access_token
-
-    begin
-      Octokit.check_application_authorization(@access_token)
-      session[:access_token] = @access_token
-
-      redirect_to '/'
-    rescue => e
-      redirect_to '/welp'
-    end
+  def create
+    session[:access_token] = Octokit.exchange_code_for_token(params[:code]).access_token
+    redirect_to logged_in_root_path
   end
 
   def destroy
