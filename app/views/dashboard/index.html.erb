@@ -1,7 +1,7 @@
 <p>Logged in as @<%= client.user.login %>.</p>
 
 <%= form_tag logout_path, :method => :delete do %>
-  <%= button_tag 'Log out?' %>
+  <%= button_tag 'Log out?', :name => nil %>
 <% end %>
 
 <% if client.repositories.any? %>
