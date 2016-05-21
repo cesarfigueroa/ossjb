@@ -1,0 +1,17 @@
+<p>Logged in as @<%= client.user.login %>.</p>
+
+<%= form_tag logout_path, :method => :delete do %>
+  <%= button_tag 'Log out?', :name => nil %>
+<% end %>
+
+<% if client.repositories.any? %>
+  <ul>
+    <% client.repositories.each do |repository| %>
+      <li><%= link_to repository.name, repository.html_url %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You no haz repos :-(</p>
+<% end %>
+
+<pre><%= client.rate_limit %></pre>
